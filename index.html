@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A crisp, tactile tic tac toe match for two players." />
+    <title>Three in a Row</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="wordmark" href="." aria-label="Three in a Row home">3<span>/</span>ROW</a>
+        <p class="round-label"><span class="live-dot"></span> LOCAL MATCH <span class="round-number">ROUND 01</span></p>
+      </header>
+      <section class="intro" aria-labelledby="game-title">
+        <p class="kicker">A tiny game of nerve</p>
+        <h1 id="game-title">Three<br /><em>in a row.</em></h1>
+        <p class="intro-copy">Find the line before your opponent does.<br />No resets. No second guesses.</p>
+      </section>
+      <section class="game-layout" aria-label="Tic tac toe game">
+        <aside class="scoreboard">
+          <div class="score-card player-x active" data-player="X">
+            <div class="player-top"><span class="player-mark mark-x">×</span><span class="turn-tag">YOUR TURN</span></div>
+            <div class="player-name">PLAYER X</div><div class="score" data-score="X">0</div>
+          </div>
+          <div class="score-card player-o" data-player="O">
+            <div class="player-top"><span class="player-mark mark-o">○</span><span class="turn-tag">WAITING</span></div>
+            <div class="player-name">PLAYER O</div><div class="score" data-score="O">0</div>
+          </div>
+          <div class="score-card draws">
+            <div class="player-top"><span class="player-mark mark-draw">=</span></div>
+            <div class="player-name">DRAWS</div><div class="score" data-score="draws">0</div>
+          </div>
+        </aside>
+        <div class="board-wrap">
+          <div class="status-row" aria-live="polite"><span class="status-label">CURRENT TURN</span><strong id="status">PLAYER X</strong></div>
+          <div class="board" role="grid" aria-label="Tic tac toe board">
+            <button class="cell" type="button" data-index="0" role="gridcell" aria-label="Empty square 1"></button><button class="cell" type="button" data-index="1" role="gridcell" aria-label="Empty square 2"></button><button class="cell" type="button" data-index="2" role="gridcell" aria-label="Empty square 3"></button>
+            <button class="cell" type="button" data-index="3" role="gridcell" aria-label="Empty square 4"></button><button class="cell" type="button" data-index="4" role="gridcell" aria-label="Empty square 5"></button><button class="cell" type="button" data-index="5" role="gridcell" aria-label="Empty square 6"></button>
+            <button class="cell" type="button" data-index="6" role="gridcell" aria-label="Empty square 7"></button><button class="cell" type="button" data-index="7" role="gridcell" aria-label="Empty square 8"></button><button class="cell" type="button" data-index="8" role="gridcell" aria-label="Empty square 9"></button>
+          </div>
+          <div class="board-footer"><span>TAKE YOUR SHOT</span><span>01 — 09</span></div>
+        </div>
+      </section>
+      <footer class="controls"><button class="reset-button" id="reset-game" type="button"><span aria-hidden="true">↻</span> Reset board</button><p>Two players · One board · Endless rematches</p></footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
